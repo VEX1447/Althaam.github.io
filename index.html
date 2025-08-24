@@ -3,115 +3,173 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>VEX</title>
+  <title>Soul Profile</title>
   <style>
     body {
       margin: 0;
-      font-family: "Courier New", monospace;
-      background-color: #000;
-      color: #0f0;
-      text-align: center;
+      display: flex;
+      height: 100vh;
+      font-family: Arial, sans-serif;
+      background: #111;
+      color: #eee;
     }
 
-    /* Highlighted (glowing) text */
-    h1, h2, a.important {
-      color: #0f0;
-      text-shadow: 0 0 5px #0f0, 0 0 10px #0f0, 0 0 20px #0f0;
-    }
-
-    /* Normal text */
-    p, a {
-      color: #0f0;
-    }
-
-    img {
-      width: 120px;
-      height: 120px;
-      border-radius: 50%;
-      border: 2px solid #0f0;
-      box-shadow: 0 0 15px #0f0;
-      margin-top: 20px;
-    }
-
-    .container {
-      max-width: 600px;
-      margin: auto;
+    /* Left Sidebar (fixed, no scroll) */
+    .sidebar-left {
+      width: 260px;
+      background: #1c1c1c;
+      color: #eee;
       padding: 20px;
-      border: 1px solid #0f0;
-      border-radius: 10px;
-      margin-top: 30px;
+      flex-shrink: 0;
+      position: fixed;
+      top: 0;
+      bottom: 0;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      border-right: 2px solid #333;
+    }
+    .sidebar-left h2 {
+      margin-top: 0;
+      border-bottom: 1px solid #444;
+      padding-bottom: 8px;
+      font-size: 1.5rem;
+      color: #66ff99;
+    }
+    .sidebar-left p {
+      margin: 12px 0;
+    }
+    .sidebar-left strong {
+      color: #66ff99;
     }
 
+    /* Links Section */
+    .links h3 {
+      font-size: 1.2rem;
+      margin-bottom: 10px;
+      color: #66ff99;
+      border-bottom: 1px solid #444;
+      padding-bottom: 6px;
+    }
+    .links ul {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+    }
+    .links li {
+      margin: 10px 0;
+    }
     .links a {
-      display: block;
-      margin: 8px 0;
+      color: #eee;
       text-decoration: none;
+      font-size: 1rem;
+      transition: 0.2s;
+    }
+    .links a:hover {
+      color: #66ff99;
     }
 
-    .chat-btn {
-      display: inline-block;
-      margin-top: 15px;
-      padding: 10px 20px;
-      border: 1px solid #0f0;
-      background: black;
-      color: #0f0;
-      text-decoration: none;
-      text-shadow: 0 0 5px #0f0;
-      border-radius: 8px;
-      transition: 0.3s;
+    /* Main Content (center) */
+    .main {
+      flex: 1;
+      padding: 30px;
+      margin-left: 260px; /* space for left sidebar */
+      margin-right: 250px; /* space for right sidebar */
+      overflow-y: auto;
+    }
+    .main h1 {
+      font-size: 2rem;
+      margin-bottom: 20px;
+      color: #66ff99;
+    }
+    .main p {
+      margin-bottom: 1.2rem;
+      line-height: 1.6;
     }
 
-    .chat-btn:hover {
-      background: #0f0;
-      color: black;
+    /* Right Sidebar (scrollable independently) */
+    .sidebar-right {
+      width: 250px;
+      background: #181818;
+      color: #eee;
+      padding: 20px;
+      flex-shrink: 0;
+      margin-left: auto;
+      overflow-y: auto; /* scroll enabled */
+      border-left: 2px solid #333;
+    }
+    .sidebar-right h3 {
+      margin-top: 0;
+      border-bottom: 1px solid #555;
+      padding-bottom: 8px;
+      color: #66ff99;
+    }
+    .sidebar-right p {
+      font-size: 0.95rem;
+      line-height: 1.4;
+      margin-bottom: 10px;
     }
 
-    .updates {
-      text-align: left;
-      margin-top: 15px;
-    }
-    .updates p {
-      border-bottom: 1px dashed #0f0;
-      padding: 5px 0;
-    }
-    .updates p:first-child {
-      text-shadow: 0 0 5px #0f0, 0 0 10px #0f0; /* newest note glows */
+    /* Mobile adjustments */
+    @media (max-width: 768px) {
+      body {
+        flex-direction: column;
+      }
+      .sidebar-left {
+        position: relative;
+        width: 100%;
+        border-right: none;
+        border-bottom: 2px solid #333;
+      }
+      .sidebar-right {
+        width: 100%;
+        margin: 0;
+        height: 150px;
+        border-left: none;
+        border-top: 2px solid #333;
+      }
+      .main {
+        margin: 0;
+      }
     }
   </style>
 </head>
 <body>
-  <!-- Profile -->
-  <img src="your-profile-pic.jpg" alt="Profile Picture">
-  <h1>VEX</h1>
-  <p>Welcome to my site 👋</p>
+  <!-- Left Sidebar (fixed, no scroll) -->
+  <div class="sidebar-left">
+    <div>
+      <h2>Soul</h2>
+      <p><strong>Discord:</strong><br> vex_bg_fn</p>
+      <p><strong>YouTube:</strong><br> <a href="https://www.youtube.com/@soul123fire" target="_blank">@soul123fire</a></p>
+    </div>
 
-  <!-- Links -->
-  <div class="container">
-    <h2>My Usernames</h2>
+    <!-- Links Section (BOTTOM) -->
     <div class="links">
-      <a class="important" href="https://instagram.com/yourusername" target="_blank">Instagram</a>
-      <a class="important" href="https://twitter.com/yourusername" target="_blank">Twitter</a>
-      <a class="important" href="https://t.me/yourusername" target="_blank">Telegram</a>
-      <a class="important" href="https://github.com/vex1447" target="_blank">GitHub</a>
+      <h3>My Links</h3>
+      <ul>
+        <li><a href="#">Custom Link 1</a></li>
+        <li><a href="#">Custom Link 2</a></li>
+        <li><a href="#">Custom Link 3</a></li>
+      </ul>
     </div>
   </div>
 
-  <!-- Chat -->
-  <div class="container">
-    <h2>Talk to Me 💬</h2>
-    <a class="chat-btn" href="https://wa.me/1234567890" target="_blank">Chat on WhatsApp</a>
-    <a class="chat-btn" href="sms:1234567890">Text Me</a>
-    <a class="chat-btn" href="https://t.me/yourusername" target="_blank">Message on Telegram</a>
+  <!-- Main Content -->
+  <div class="main">
+    <h1>About Me</h1>
+    <p>
+      Hi, I’m Soul. I play Blockman Go, make edits for YouTube, and share updates here. 
+      This site is a personal hub where you’ll find my active usernames and links. 
+      Feel free to check out my channels and projects!
+    </p>
   </div>
 
-  <!-- Updates / Notes -->
-  <div class="container">
-    <h2>My Notes 📝</h2>
-    <div class="updates">
-      <p><b>[24 Aug 2025]</b> Just launched this site 🚀</p>
-      <p><b>[25 Aug 2025]</b> Working on adding more cool stuff 👾</p>
-      <!-- 👉 Add new <p> lines here whenever you want -->
-    </div>
+  <!-- Right Sidebar (scrollable) -->
+  <div class="sidebar-right">
+    <h3>Description</h3>
+    <p>This is the description section. You can add as much text as you want and it will scroll separately.</p>
+    <p>Perfect for updates, thoughts, or any longer notes that won’t fit in the main about section.</p>
+    <p>Keep adding paragraphs here and the scrollbar will handle it.</p>
   </div>
 </body>
 </html>
