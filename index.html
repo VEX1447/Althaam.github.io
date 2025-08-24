@@ -1,144 +1,214 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
+  <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Soul Portfolio</title>
+  <title>Soul's Page</title>
   <style>
+    /* General page style */
     body {
+      font-family: Arial, sans-serif;
+      background: linear-gradient(135deg, #0f2027, #203a43, #2c5364);
       margin: 0;
-      font-family: "Segoe UI", sans-serif;
-      color: #ddd;
-      background: linear-gradient(135deg, #0d0d0d, #1a1a1a);
+      padding: 0;
+      color: #fff;
       display: flex;
       justify-content: center;
+      align-items: flex-start;
+      min-height: 100vh;
+    }
+
+    /* Profile Card */
+    .card {
+      background: rgba(0, 0, 0, 0.8);
       padding: 20px;
-    }
-
-    .container {
-      max-width: 600px;
-      width: 100%;
-      background: rgba(20, 20, 20, 0.95);
-      padding: 30px 20px;
-      border-radius: 16px;
-      box-shadow: 0 4px 25px rgba(0, 0, 0, 0.6);
-      display: flex;
-      flex-direction: column;
-      position: relative;
-    }
-
-    .profile {
+      border-radius: 20px;
       text-align: center;
-      margin-bottom: 20px;
+      width: 90%;
+      max-width: 500px;
+      margin-top: 40px;
+      box-shadow: 0 0 25px rgba(0, 255, 255, 0.4);
     }
-    .profile img {
+
+    .pfp {
       width: 120px;
       height: 120px;
       border-radius: 50%;
-      border: 2px solid #6fc2f5;
-      margin-bottom: 10px;
-      object-fit: cover;
-    }
-    .profile h1 {
-      margin: 10px 0 5px;
-      color: #6fc2f5;
-      font-size: 1.8rem;
-    }
-    .profile p {
-      margin: 5px 0;
-      font-size: 1rem;
-      color: #aaa;
-    }
-
-    .description {
-      margin: 20px 0;
-      font-size: 1rem;
-      line-height: 1.6;
-      color: #ddd;
-      text-align: center;
-    }
-    .big-hello {
-      font-size: 2rem;
-      font-weight: bold;
-      color: #6fc2f5;
+      border: 3px solid #00e1ff;
       margin-bottom: 15px;
-      text-shadow: 0 0 10px #6fc2f5, 0 0 20px #6fc2f5;
-      animation: glow 2s infinite alternate;
     }
 
-    @keyframes glow {
-      from { text-shadow: 0 0 5px #6fc2f5, 0 0 10px #6fc2f5; }
-      to { text-shadow: 0 0 20px #6fc2f5, 0 0 40px #6fc2f5; }
+    h1 {
+      margin: 0;
+      font-size: 28px;
+      color: #00c3ff;
     }
 
-    .links {
-      margin-top: 30px;
-      text-align: center;
-      font-size: 0.95rem;
-      color: #777;
+    .info {
+      margin: 10px 0;
+      font-size: 15px;
     }
-    .links a {
-      color: #6fc2f5;
+
+    .info a {
+      color: #00e1ff;
       text-decoration: none;
+    }
+
+    /* Hello text */
+    .hello {
+      font-size: 30px;
+      margin: 20px 0;
+      color: #00e1ff;
+      text-shadow: 0 0 15px #00e1ff;
+    }
+
+    /* Description */
+    .description {
+      font-size: 15px;
+      margin: 15px 0;
+    }
+
+    /* Links */
+    .links {
+      margin-top: 20px;
+      font-size: 16px;
+    }
+
+    .links a {
       display: block;
       margin: 5px 0;
-    }
-    .links a:hover {
-      text-decoration: underline;
+      color: #00e1ff;
+      text-decoration: none;
     }
 
-    /* Chat box styling */
-    .chat-box {
+    /* Chatbox styles */
+    #chatbox {
       position: fixed;
       bottom: 20px;
       right: 20px;
-      width: 300px;
-      height: 400px;
-      border: 2px solid #6fc2f5;
-      border-radius: 12px;
+      width: 260px;
+      height: 320px;
+      background: rgba(20, 20, 20, 0.95);
+      border-radius: 15px;
+      box-shadow: 0 0 15px rgba(0, 255, 255, 0.4);
+      display: flex;
+      flex-direction: column;
       overflow: hidden;
-      box-shadow: 0 0 15px rgba(111, 194, 245, 0.5);
+      z-index: 1000;
+      cursor: grab;
     }
-    .chat-box iframe {
-      width: 100%;
-      height: 100%;
+
+    #chatHeader {
+      background: #111;
+      color: #00e1ff;
+      padding: 8px;
+      text-align: center;
+      font-size: 14px;
+      cursor: grab;
+    }
+
+    #chatMessages {
+      flex: 1;
+      padding: 10px;
+      overflow-y: auto;
+      font-size: 14px;
+    }
+
+    .message {
+      background: #222;
+      color: #eee;
+      padding: 6px 10px;
+      border-radius: 10px;
+      margin: 5px 0;
+      max-width: 80%;
+      word-wrap: break-word;
+    }
+
+    #chatInput {
       border: none;
+      padding: 10px;
+      outline: none;
+      font-size: 14px;
+      border-top: 1px solid #333;
+      background: #111;
+      color: white;
     }
   </style>
 </head>
 <body>
 
-  <div class="container">
-    <div class="profile">
-      <!-- ✅ Your profile pic -->
-      <img src="https://i.ibb.co/844NbgHS/your-image.png" alt="Soul">
-      <h1>Soul</h1>
-      <!-- ✅ Your info -->
-      <p><strong>Blockman Go:</strong> Soul</p>
-      <p><strong>YouTube:</strong> <a href="https://www.youtube.com/@soul123fire" target="_blank">@soul123fire</a></p>
-      <p><strong>Discord:</strong> vex_bg_fn</p>
-    </div>
+  <!-- Profile card -->
+  <div class="card">
+    <img src="https://i.ibb.co/844NbgHS/my-pfp.jpg" alt="Profile Picture" class="pfp">
+    <h1>Soul</h1>
+    <div class="info"><b>Blockman Go:</b> Soul</div>
+    <div class="info"><b>YouTube:</b> <a href="https://www.youtube.com/@soul123fire" target="_blank">@soul123fire</a></div>
+    <div class="info"><b>Discord:</b> vex_bg_fn</div>
+
+    <div class="hello">★彡 HELLO 彡★</div>
 
     <div class="description">
-      <!-- ✅ Big HELLO -->
-      <div class="big-hello">★彡 HELLO 彡★</div>
-      <p>
-        Welcome to my page!  
-        This is where I share my projects, edits, and updates.  
-        Stay tuned for more cool stuff coming soon.
-      </p>
+      Welcome to my page! This is where I share my projects, edits, and updates.<br>
+      Stay tuned for more cool stuff coming soon.
     </div>
 
     <div class="links">
-      <!-- ✅ Links area -->
-      <p>No links yet</p>
+      <p><i>No links yet</i></p>
+      <!-- Example for later:
+      <a href="https://your-link.com">Custom Link 1</a>
+      -->
     </div>
   </div>
 
-  <!-- ✅ Chat box in bottom-right corner -->
-  <div class="chat-box">
-    <iframe src="https://tlk.io/soul-room"></iframe>
+  <!-- Chatbox -->
+  <div id="chatbox">
+    <div id="chatHeader">💬 Chat</div>
+    <div id="chatMessages"></div>
+    <input id="chatInput" type="text" placeholder="Type a message...">
   </div>
 
+  <script>
+    // Chat system
+    const chatInput = document.getElementById('chatInput');
+    const chatMessages = document.getElementById('chatMessages');
+
+    chatInput.addEventListener('keypress', function(e) {
+      if (e.key === 'Enter' && chatInput.value.trim() !== '') {
+        const msg = document.createElement('div');
+        msg.className = 'message';
+        msg.textContent = "Soul: " + chatInput.value;
+        chatMessages.appendChild(msg);
+        chatMessages.scrollTop = chatMessages.scrollHeight;
+        chatInput.value = '';
+      }
+    });
+
+    // Draggable chatbox
+    const chatbox = document.getElementById('chatbox');
+    const header = document.getElementById('chatHeader');
+    let offsetX = 0, offsetY = 0, isDragging = false;
+
+    header.addEventListener('mousedown', (e) => {
+      isDragging = true;
+      offsetX = e.clientX - chatbox.getBoundingClientRect().left;
+      offsetY = e.clientY - chatbox.getBoundingClientRect().top;
+      chatbox.style.cursor = 'grabbing';
+    });
+
+    document.addEventListener('mousemove', (e) => {
+      if (isDragging) {
+        chatbox.style.left = (e.clientX - offsetX) + 'px';
+        chatbox.style.top = (e.clientY - offsetY) + 'px';
+        chatbox.style.right = 'auto';
+        chatbox.style.bottom = 'auto';
+        chatbox.style.position = 'fixed';
+      }
+    });
+
+    document.addEventListener('mouseup', () => {
+      isDragging = false;
+      chatbox.style.cursor = 'grab';
+    });
+  </script>
 </body>
 </html>
