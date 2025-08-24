@@ -1,10 +1,117 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-    <title>Welcome to Soul!</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>VEX</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: "Courier New", monospace;
+      background-color: #000;
+      color: #0f0;
+      text-align: center;
+    }
+
+    /* Highlighted (glowing) text */
+    h1, h2, a.important {
+      color: #0f0;
+      text-shadow: 0 0 5px #0f0, 0 0 10px #0f0, 0 0 20px #0f0;
+    }
+
+    /* Normal text */
+    p, a {
+      color: #0f0;
+    }
+
+    img {
+      width: 120px;
+      height: 120px;
+      border-radius: 50%;
+      border: 2px solid #0f0;
+      box-shadow: 0 0 15px #0f0;
+      margin-top: 20px;
+    }
+
+    .container {
+      max-width: 600px;
+      margin: auto;
+      padding: 20px;
+      border: 1px solid #0f0;
+      border-radius: 10px;
+      margin-top: 30px;
+    }
+
+    .links a {
+      display: block;
+      margin: 8px 0;
+      text-decoration: none;
+    }
+
+    .chat-btn {
+      display: inline-block;
+      margin-top: 15px;
+      padding: 10px 20px;
+      border: 1px solid #0f0;
+      background: black;
+      color: #0f0;
+      text-decoration: none;
+      text-shadow: 0 0 5px #0f0;
+      border-radius: 8px;
+      transition: 0.3s;
+    }
+
+    .chat-btn:hover {
+      background: #0f0;
+      color: black;
+    }
+
+    .updates {
+      text-align: left;
+      margin-top: 15px;
+    }
+    .updates p {
+      border-bottom: 1px dashed #0f0;
+      padding: 5px 0;
+    }
+    .updates p:first-child {
+      text-shadow: 0 0 5px #0f0, 0 0 10px #0f0; /* newest note glows */
+    }
+  </style>
 </head>
 <body>
-    <h1>Hello World 🌍</h1>
-    <p>This is my first free website!</p>
+  <!-- Profile -->
+  <img src="your-profile-pic.jpg" alt="Profile Picture">
+  <h1>VEX</h1>
+  <p>Welcome to my site 👋</p>
+
+  <!-- Links -->
+  <div class="container">
+    <h2>My Usernames</h2>
+    <div class="links">
+      <a class="important" href="https://instagram.com/yourusername" target="_blank">Instagram</a>
+      <a class="important" href="https://twitter.com/yourusername" target="_blank">Twitter</a>
+      <a class="important" href="https://t.me/yourusername" target="_blank">Telegram</a>
+      <a class="important" href="https://github.com/vex1447" target="_blank">GitHub</a>
+    </div>
+  </div>
+
+  <!-- Chat -->
+  <div class="container">
+    <h2>Talk to Me 💬</h2>
+    <a class="chat-btn" href="https://wa.me/1234567890" target="_blank">Chat on WhatsApp</a>
+    <a class="chat-btn" href="sms:1234567890">Text Me</a>
+    <a class="chat-btn" href="https://t.me/yourusername" target="_blank">Message on Telegram</a>
+  </div>
+
+  <!-- Updates / Notes -->
+  <div class="container">
+    <h2>My Notes 📝</h2>
+    <div class="updates">
+      <p><b>[24 Aug 2025]</b> Just launched this site 🚀</p>
+      <p><b>[25 Aug 2025]</b> Working on adding more cool stuff 👾</p>
+      <!-- 👉 Add new <p> lines here whenever you want -->
+    </div>
+  </div>
 </body>
 </html>
