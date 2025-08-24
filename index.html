@@ -3,108 +3,106 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Soul's Page</title>
+  <title>Soul</title>
   <style>
-    /* General page style */
     body {
       font-family: Arial, sans-serif;
-      background: linear-gradient(135deg, #0f2027, #203a43, #2c5364);
+      background: linear-gradient(180deg, #0a0a0a, #0f2027);
+      color: white;
+      text-align: center;
       margin: 0;
       padding: 0;
-      color: #fff;
-      display: flex;
-      justify-content: center;
-      align-items: flex-start;
-      min-height: 100vh;
     }
 
-    /* Profile Card */
     .card {
-      background: rgba(0, 0, 0, 0.8);
+      background: #111;
+      margin: 50px auto;
       padding: 20px;
       border-radius: 20px;
-      text-align: center;
       width: 90%;
-      max-width: 500px;
-      margin-top: 40px;
+      max-width: 400px;
       box-shadow: 0 0 25px rgba(0, 255, 255, 0.4);
     }
 
-    .pfp {
+    img {
       width: 120px;
-      height: 120px;
       border-radius: 50%;
       border: 3px solid #00e1ff;
-      margin-bottom: 15px;
+      margin-top: 10px;
     }
 
-    h1 {
-      margin: 0;
-      font-size: 28px;
-      color: #00c3ff;
-    }
-
-    .info {
-      margin: 10px 0;
-      font-size: 15px;
-    }
-
-    .info a {
+    h2 {
       color: #00e1ff;
-      text-decoration: none;
+      margin: 10px 0 5px;
     }
 
-    /* Hello text */
+    p {
+      margin: 5px 0;
+    }
+
     .hello {
-      font-size: 30px;
-      margin: 20px 0;
+      font-size: 22px;
+      font-weight: bold;
       color: #00e1ff;
       text-shadow: 0 0 15px #00e1ff;
-    }
-
-    /* Description */
-    .description {
-      font-size: 15px;
       margin: 15px 0;
     }
 
-    /* Links */
-    .links {
-      margin-top: 20px;
-      font-size: 16px;
-    }
-
-    .links a {
-      display: block;
-      margin: 5px 0;
-      color: #00e1ff;
-      text-decoration: none;
-    }
-
-    /* Chatbox styles */
-    #chatbox {
+    /* Toggle Button */
+    #chatToggle {
       position: fixed;
       bottom: 20px;
       right: 20px;
-      width: 260px;
-      height: 320px;
-      background: rgba(20, 20, 20, 0.95);
-      border-radius: 15px;
-      box-shadow: 0 0 15px rgba(0, 255, 255, 0.4);
+      width: 55px;
+      height: 55px;
+      background: #00e1ff;
+      border-radius: 50%;
       display: flex;
+      justify-content: center;
+      align-items: center;
+      font-size: 26px;
+      color: #111;
+      cursor: pointer;
+      box-shadow: 0 0 20px rgba(0, 255, 255, 0.7);
+      z-index: 1001;
+    }
+
+    /* Chatbox */
+    #chatbox {
+      position: fixed;
+      bottom: 90px;
+      right: 20px;
+      width: 300px;
+      height: 400px;
+      background: #111;
+      border: 2px solid #00e1ff;
+      border-radius: 15px;
+      display: none;
       flex-direction: column;
-      overflow: hidden;
+      box-shadow: 0 0 25px rgba(0, 255, 255, 0.6);
       z-index: 1000;
-      cursor: grab;
     }
 
     #chatHeader {
-      background: #111;
-      color: #00e1ff;
-      padding: 8px;
+      background: #00e1ff;
+      color: #111;
+      padding: 10px;
       text-align: center;
-      font-size: 14px;
-      cursor: grab;
+      border-radius: 12px 12px 0 0;
+      cursor: move;
+      font-weight: bold;
+      position: relative;
+    }
+
+    #chatHeader button {
+      position: absolute;
+      right: 10px;
+      top: 5px;
+      background: transparent;
+      border: none;
+      font-size: 18px;
+      color: #111;
+      cursor: pointer;
     }
 
     #chatMessages {
@@ -112,87 +110,95 @@
       padding: 10px;
       overflow-y: auto;
       font-size: 14px;
+      color: #ddd;
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
     }
 
-    .message {
+    .msg {
       background: #222;
-      color: #eee;
-      padding: 6px 10px;
       border-radius: 10px;
-      margin: 5px 0;
+      padding: 6px 10px;
+      align-self: flex-start;
       max-width: 80%;
-      word-wrap: break-word;
+      box-shadow: 0 0 8px rgba(0, 225, 255, 0.3);
     }
 
     #chatInput {
       border: none;
       padding: 10px;
+      border-top: 1px solid #00e1ff;
+      border-radius: 0 0 12px 12px;
       outline: none;
-      font-size: 14px;
-      border-top: 1px solid #333;
-      background: #111;
+      background: #222;
       color: white;
     }
   </style>
 </head>
 <body>
-
-  <!-- Profile card -->
   <div class="card">
-    <img src="https://i.ibb.co/844NbgHS/my-pfp.jpg" alt="Profile Picture" class="pfp">
-    <h1>Soul</h1>
-    <div class="info"><b>Blockman Go:</b> Soul</div>
-    <div class="info"><b>YouTube:</b> <a href="https://www.youtube.com/@soul123fire" target="_blank">@soul123fire</a></div>
-    <div class="info"><b>Discord:</b> vex_bg_fn</div>
-
+    <img src="https://i.ibb.co/8YkFQYh/profile.png" alt="Profile">
+    <h2>Soul</h2>
+    <p><b>Blockman Go:</b> Soul</p>
+    <p><b>YouTube:</b> <a href="https://youtube.com/@soul123fire" target="_blank" style="color:#00e1ff;">@soul123fire</a></p>
+    <p><b>Discord:</b> vex_bg_fn</p>
     <div class="hello">★彡 HELLO 彡★</div>
-
-    <div class="description">
-      Welcome to my page! This is where I share my projects, edits, and updates.<br>
-      Stay tuned for more cool stuff coming soon.
-    </div>
-
-    <div class="links">
-      <p><i>No links yet</i></p>
-      <!-- Example for later:
-      <a href="https://your-link.com">Custom Link 1</a>
-      -->
-    </div>
+    <p>Welcome to my page! This is where I share my projects, edits, and updates. Stay tuned for more cool stuff coming soon.</p>
+    <p><i>No links yet</i></p>
   </div>
+
+  <!-- Chat Toggle -->
+  <div id="chatToggle">💬</div>
 
   <!-- Chatbox -->
   <div id="chatbox">
-    <div id="chatHeader">💬 Chat</div>
+    <div id="chatHeader">💬 Chat 
+      <button id="closeChat">❌</button>
+    </div>
     <div id="chatMessages"></div>
     <input id="chatInput" type="text" placeholder="Type a message...">
   </div>
 
   <script>
-    // Chat system
-    const chatInput = document.getElementById('chatInput');
+    const chatbox = document.getElementById('chatbox');
+    const chatToggle = document.getElementById('chatToggle');
+    const closeChat = document.getElementById('closeChat');
     const chatMessages = document.getElementById('chatMessages');
+    const chatInput = document.getElementById('chatInput');
+    const header = document.getElementById('chatHeader');
 
-    chatInput.addEventListener('keypress', function(e) {
-      if (e.key === 'Enter' && chatInput.value.trim() !== '') {
-        const msg = document.createElement('div');
-        msg.className = 'message';
-        msg.textContent = "Soul: " + chatInput.value;
+    // Toggle chat open
+    chatToggle.addEventListener('click', () => {
+      chatbox.style.display = 'flex';
+      chatToggle.style.display = 'none';
+    });
+
+    // Close chat
+    closeChat.addEventListener('click', () => {
+      chatbox.style.display = 'none';
+      chatToggle.style.display = 'flex';
+    });
+
+    // Send message
+    chatInput.addEventListener('keypress', (e) => {
+      if (e.key === 'Enter' && chatInput.value.trim() !== "") {
+        let msg = document.createElement('div');
+        msg.className = 'msg';
+        msg.textContent = `Soul: ${chatInput.value}`;
         chatMessages.appendChild(msg);
         chatMessages.scrollTop = chatMessages.scrollHeight;
-        chatInput.value = '';
+        chatInput.value = "";
       }
     });
 
-    // Draggable chatbox
-    const chatbox = document.getElementById('chatbox');
-    const header = document.getElementById('chatHeader');
-    let offsetX = 0, offsetY = 0, isDragging = false;
+    // Make chat draggable
+    let isDragging = false, offsetX, offsetY;
 
     header.addEventListener('mousedown', (e) => {
       isDragging = true;
-      offsetX = e.clientX - chatbox.getBoundingClientRect().left;
-      offsetY = e.clientY - chatbox.getBoundingClientRect().top;
-      chatbox.style.cursor = 'grabbing';
+      offsetX = e.clientX - chatbox.offsetLeft;
+      offsetY = e.clientY - chatbox.offsetTop;
     });
 
     document.addEventListener('mousemove', (e) => {
@@ -201,13 +207,11 @@
         chatbox.style.top = (e.clientY - offsetY) + 'px';
         chatbox.style.right = 'auto';
         chatbox.style.bottom = 'auto';
-        chatbox.style.position = 'fixed';
       }
     });
 
     document.addEventListener('mouseup', () => {
       isDragging = false;
-      chatbox.style.cursor = 'grab';
     });
   </script>
 </body>
