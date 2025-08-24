@@ -1,159 +1,118 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
+  <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Soul Profile</title>
+  <title>Soul Portfolio</title>
   <style>
     body {
       margin: 0;
-      font-family: "Segoe UI", Arial, sans-serif;
-      background: linear-gradient(135deg, #f9f9f9, #e3f2fd);
-      color: #333;
+      font-family: "Segoe UI", sans-serif;
+      color: #ddd;
+      background: linear-gradient(135deg, #2e2e2e, #1a1a1a);
       display: flex;
-      flex-direction: column;
-      min-height: 100vh;
+      justify-content: center;
+      padding: 20px;
     }
 
-    /* Profile Card */
+    .container {
+      max-width: 600px;
+      width: 100%;
+      background: rgba(25, 25, 25, 0.95);
+      padding: 30px 20px;
+      border-radius: 16px;
+      box-shadow: 0 4px 25px rgba(0, 0, 0, 0.6);
+    }
+
     .profile {
-      background: #ffffffdd;
-      padding: 20px;
-      border-bottom: 1px solid #ddd;
       text-align: center;
-      backdrop-filter: blur(8px);
+      margin-bottom: 20px;
     }
     .profile img {
-      width: 100px;   /* Profile Picture Size */
+      width: 100px;
       height: 100px;
       border-radius: 50%;
-      object-fit: cover;
-      border: 3px solid #4a90e2;
+      border: 2px solid #6fc2f5;
       margin-bottom: 10px;
+      object-fit: cover;
     }
-    .profile h2 {
-      margin: 0;
-      font-size: 1.8em;
-      color: #4a90e2;
+    .profile h1 {
+      margin: 10px 0 5px;
+      color: #6fc2f5;
+      font-size: 1.8rem;
     }
     .profile p {
-      margin: 6px 0;
-    }
-    .profile strong {
-      color: #4a90e2;
+      margin: 5px 0;
+      font-size: 1rem;
+      color: #aaa;
     }
 
-    /* Links */
-    .links ul {
-      list-style: none;
-      padding: 0;
-      margin: 10px 0 0;
-    }
-    .links li {
-      margin: 6px 0;
+    .links {
+      margin-top: 15px;
+      text-align: center;
     }
     .links a {
-      color: #5c6bc0;
+      display: inline-block;
+      margin: 5px 10px;
+      padding: 8px 14px;
+      border-radius: 10px;
+      background: rgba(255,255,255,0.05);
+      color: #b3e5fc;
       text-decoration: none;
-      font-weight: bold;
-      transition: 0.2s;
+      font-size: 0.95rem;
+      transition: 0.3s;
     }
     .links a:hover {
-      color: #3f51b5;
+      background: rgba(111,194,245,0.15);
+      color: #6fc2f5;
     }
 
-    /* Main Content */
-    .main {
-      padding: 20px;
-    }
-    .main h1 {
-      color: #4a90e2;
-      margin-top: 0;
-    }
-
-    /* Description Box */
     .description {
-      background: #ffffffcc;
-      padding: 15px;
-      border-top: 1px solid #ddd;
-      height: 220px;
+      margin-top: 25px;
+      font-size: 1rem;
+      line-height: 1.6;
+      color: #ddd;
+      max-height: 350px; /* scroll only for long text */
       overflow-y: auto;
-      backdrop-filter: blur(6px);
+      padding-right: 10px;
     }
-
-    /* Desktop Layout */
-    @media (min-width: 768px) {
-      body {
-        flex-direction: row;
-      }
-      .profile {
-        width: 250px;
-        border-bottom: none;
-        border-right: 1px solid #ddd;
-        height: 100vh;
-      }
-      .main {
-        flex: 1;
-        margin: 0 260px;
-      }
-      .description {
-        position: fixed;
-        right: 0;
-        top: 0;
-        bottom: 0;
-        width: 260px;
-        border-left: 1px solid #ddd;
-        border-top: none;
-        height: 100vh;
-      }
+    .description::-webkit-scrollbar {
+      width: 6px;
+    }
+    .description::-webkit-scrollbar-thumb {
+      background: #444;
+      border-radius: 3px;
     }
   </style>
 </head>
 <body>
 
-  <!-- Profile Section -->
-  <div class="profile">
-    <!-- CHANGE HERE: Replace with your profile picture -->
-    <img src="https://via.placeholder.com/100" alt="Profile Picture">
-
-    <!-- CHANGE HERE: Your name -->
-    <h2>Soul</h2>
-
-    <!-- CHANGE HERE: Your usernames -->
-    <p><strong>YouTube:</strong> 
-      <a href="https://www.youtube.com/@soul123fire" target="_blank">soul123fire</a>
-    </p>
-    <p><strong>Discord:</strong> vex_bg_fn</p>
-
-    <!-- CHANGE HERE: Your custom links -->
-    <div class="links">
-      <h3>Links</h3>
-      <ul>
-        <li><a href="#">Custom Link 1</a></li>
-        <li><a href="#">Custom Link 2</a></li>
-      </ul>
+  <div class="container">
+    <div class="profile">
+      <!-- CHANGE: Replace image -->
+      <img src="https://via.placeholder.com/100" alt="Soul">
+      <h1>Soul</h1>
+      <p><strong>YouTube:</strong> <a href="https://www.youtube.com/@soul123fire" target="_blank">@soul123fire</a></p>
+      <p><strong>Discord:</strong> vex_bg_fn</p>
     </div>
-  </div>
 
-  <!-- Main Content -->
-  <div class="main">
-    <h1>About Me</h1>
+    <div class="links">
+      <!-- CHANGE: Custom links -->
+      <a href="#">Custom Link 1</a>
+      <a href="#">Custom Link 2</a>
+      <a href="#">Custom Link 3</a>
+    </div>
 
-    <!-- CHANGE HERE: Write your introduction -->
-    <p>
-      This is where you can write a short intro about yourself.  
-      Keep it clean and professional.  
-    </p>
-  </div>
-
-  <!-- Description (scrollable on the right) -->
-  <div class="description">
-    <h3>Description</h3>
-
-    <!-- CHANGE HERE: Add longer description -->
-    <p>This is your scrollable description section.</p>
-    <p>You can put longer text here (multiple paragraphs).</p>
-    <p>Example: your projects, your story, or any extra info.</p>
+    <div class="description">
+      <!-- CHANGE: Add your description text here -->
+      <p>
+        Hey, I’m Soul — I play Blockman Go, post edits on YouTube, and connect with my friends on Discord. 
+        This page is my personal space where I share updates, ideas, and projects. 
+      </p>
+      <p>
+        You can scroll through this section if I add longer paragraphs. Everything above stays visible as the main info.
+      </p>
+    </div>
   </div>
 
 </body>
